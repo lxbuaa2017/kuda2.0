@@ -1,6 +1,6 @@
 #encoding=utf-8
 en2t = {}
-with open('/home/lx/PycharmProjects/kuda2.0/pkubase_entity_fragment.txt','r') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_entity_fragment.txt','r') as f:
 	for line in f:
 		dou = line[:-1].split('\t')
 		types = dou[1].replace('|','#').split('#')[4]
@@ -14,7 +14,7 @@ lisen = {}
 for i in range(49):#iterate every predicate
 	lisen['%d'%i] = set()
 
-with open('/home/lx/PycharmProjects/kuda2.0/triple.txt','r') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt','r') as f:
 	i = 1
 	for line in f:
 		if i%100000==0:
@@ -36,7 +36,7 @@ for k in lisen.keys():
 	str = '['+','.join(lisen[k])+']\t'+k+'\tliteral\n'
 	sen.add(str)
 
-with open('/home/lx/PycharmProjects/kuda2.0/pkubase_predicate_fragment.txt','w') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_predicate_fragment.txt','w') as f:
 	for item in sen:
 		f.write(item)
 	print(len(sen))

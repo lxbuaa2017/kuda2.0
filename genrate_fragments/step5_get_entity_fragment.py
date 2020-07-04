@@ -4,7 +4,7 @@ outEnEdge = {}
 inEdge = {}
 outEdge = {}
 types = {}
-with open('/home/lx/PycharmProjects/kuda2.0/triple.txt', 'r') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt', 'r') as f:
     i = 1
     for line in f:
         try:
@@ -60,8 +60,8 @@ print(len(outEnEdge))
 print(len(inEdge))
 print(len(outEdge))
 print(len(types))
-wr = open('/home/lx/PycharmProjects/kuda2.0/pkubase_entity_fragment.txt', 'w')
-with open("/home/lx/PycharmProjects/kuda2.0/pkubase_entity_id.txt", "r") as f:  # here we should iterate every entitiy
+wr = open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_entity_fragment.txt', 'w')
+with open("/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/id_mappings/pkubase_entity_id.txt", "r") as f:  # here we should iterate every entitiy
     for line in f:
         i = int(line.split("\t")[1])
         if i % 10000 == 0:

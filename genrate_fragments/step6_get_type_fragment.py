@@ -1,6 +1,6 @@
 # encoding=utf-8
 en2t = {}
-with open('/home/lx/PycharmProjects/kuda2.0/pkubase_entity_fragment.txt', 'r') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_entity_fragment.txt', 'r') as f:
     for line in f:
         dou = line[:-1].split('\t')
         types = dou[1].replace('|', '#').split('#')[4]
@@ -14,7 +14,7 @@ lisen = {}
 for i in range(26):  # iterate every basic type
     lisen['%d' % i] = [set(), set(), set()]
 
-with open('/home/lx/PycharmProjects/kuda2.0/triple.txt', 'r') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt', 'r') as f:
     i = 1
     for line in f:
         if i % 100000 == 0:
@@ -33,7 +33,7 @@ with open('/home/lx/PycharmProjects/kuda2.0/triple.txt', 'r') as f:
                         lisen[t][0].add(tri[1])
                         lisen[t][2].add(tri[2].strip())
 
-with open('/home/lx/PycharmProjects/kuda2.0/pkubase_type_fragment.txt', 'w') as f:
+with open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_type_fragment.txt', 'w') as f:
     for k in lisen.keys():
         f.write(k + '\t' + ','.join(lisen[k][0]) + '|' + ','.join(lisen[k][1]) + '|' + ','.join(lisen[k][2]) + '\n')
     print(len(lisen))
