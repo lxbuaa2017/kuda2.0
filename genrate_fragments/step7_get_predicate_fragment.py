@@ -17,15 +17,15 @@ for i in range(49):#iterate every predicate
 with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt','r') as f:
 	i = 1
 	for line in f:
-		if i%100000==0:
-			print(i)
+		# if i%100000==0:
+		# 	print(i)
 		tri = line[:-1].split(' ')
 		if tri[0]!='-1':
 			pre = '['+','.join(en2t[tri[0]])+']'
 		else:
 			pre = '[]'
 		if tri[2].strip()!='-1' and tri[1]!='48':
-			print(tri)
+			# print(tri)
 			pos = '['+','.join(en2t[tri[2].strip()])+']\n'
 			str = pre + '\t' + tri[1] + '\t' + pos
 			sen.add(str)
@@ -38,7 +38,8 @@ for k in lisen.keys():
 
 with open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_predicate_fragment.txt','w') as f:
 	for item in sen:
-		f.write(item)
+		if(len(sen)>0):
+			f.write(item)
 	print(len(sen))
 		
 		

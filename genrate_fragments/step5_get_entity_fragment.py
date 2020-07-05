@@ -50,8 +50,8 @@ with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt', 'r') as f:
                         inEnEdge[tri[2].strip()] = {}
                         inEnEdge[tri[2].strip()][tri[0]] = set()
                         inEnEdge[tri[2].strip()][tri[0]].add(tri[1])
-            if i % 10000 == 0:
-                print(i)
+            # if i % 10000 == 0:
+            #     print(i)
             i += 1
         except:
             continue
@@ -64,8 +64,8 @@ wr = open('/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/pkubase_entity_fr
 with open("/home/lx/IdeaProject/gAnswer/data/pkubase/fragments/id_mappings/pkubase_entity_id.txt", "r") as f:  # here we should iterate every entitiy
     for line in f:
         i = int(line.split("\t")[1])
-        if i % 10000 == 0:
-            print(i)
+        # if i % 10000 == 0:
+        #     print(i)
         eid = "%d" % i
         ret = ""
         tmp = ""

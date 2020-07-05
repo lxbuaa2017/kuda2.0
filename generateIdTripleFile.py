@@ -3,14 +3,14 @@
 from py2neo import Graph
 from pandas import DataFrame
 
-graph = Graph("bolt://localhost:7687/db/schemaKG/", username="neo4j", password="kuda")
+graph = Graph("bolt://123.57.203.185:7687/db/data/", username="neo4j", password="kuda")
 
 def get_labels():
     label_list = []
     labels = DataFrame(graph.run("call db.labels()").data())
     for index, row in labels.iterrows():
-        if index == 0:
-            continue
+        # if index == 0:
+        #     continue
         label_list.append(row.to_list()[0])
     return label_list
 
@@ -23,7 +23,7 @@ def get_predicates():
 
 
 predicates = get_predicates()
-with open("./triple.txt", "w") as f:
+with open("/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt", "w") as f:
     data = DataFrame(graph.run("match (a)-[r]->(b) return id(a),type(r),id(b)").data())
     for row in data.iterrows():
         obj = row[1].to_dict()

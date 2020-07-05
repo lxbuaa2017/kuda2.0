@@ -17,11 +17,11 @@ for i in range(26):  # iterate every basic type
 with open('/home/lx/IdeaProject/gAnswer/data/pkubase/triple.txt', 'r') as f:
     i = 1
     for line in f:
-        if i % 100000 == 0:
-            print(i)
+        # if i % 100000 == 0:
+        #     print(i)
         i += 1
         tri = line.split(' ')
-        print(tri)
+        # print(tri)
         if tri[1] != '48':
             for t in en2t[tri[0]]:
                 if len(t) <= 5:
